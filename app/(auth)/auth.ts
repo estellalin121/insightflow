@@ -1,17 +1,20 @@
+export type UserType = "guest" | "regular";
+
 export async function auth() {
   return {
     user: {
       id: "guest-user",
       email: "guest@insightflow.local",
       name: "Guest",
+      type: "guest" as UserType,
     },
   };
 }
 
-export const GET = async () => {
-  return new Response("OK");
-};
+export async function GET() {
+  return Response.json({ ok: true });
+}
 
-export const POST = async () => {
-  return new Response("OK");
-};
+export async function POST() {
+  return Response.json({ ok: true });
+}
